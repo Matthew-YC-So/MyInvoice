@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.media.MediaScannerConnection;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuInflater;
 import android.view.Menu;
@@ -19,7 +21,7 @@ import java.io.IOException;
 import java.util.List;
 
 // public class MainActivity extends ListActivity {
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     // private ListView listView;
     private  TableLayout table;
