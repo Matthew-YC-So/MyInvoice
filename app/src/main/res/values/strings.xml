@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">My Invoice</string>
     <string name="action_settings">Settings</string>
+    <string name="invoice_id">Inv #</string>
+    <string name="invoice_date">Date</string>
+    <string name="invoice_member">Member</string>
+    <string name="invoice_net">Net</string>
 </resources>
