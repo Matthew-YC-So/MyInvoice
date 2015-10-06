@@ -31,7 +31,7 @@
             android:layout_alignBottom="@id/invoiceDate"
             android:id="@+id/selectInvoiceDate"
             android:src="@drawable/ic_action_schedule"
-            android:contentDescription="@string/selectdate"
+            android:contentDescription="@string/select_date"
             android:cropToPadding="true"/>
     </RelativeLayout>
     <TextView
