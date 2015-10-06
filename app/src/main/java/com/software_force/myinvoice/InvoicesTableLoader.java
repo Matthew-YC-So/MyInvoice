@@ -37,8 +37,8 @@ public class InvoicesTableLoader {
         this.table.removeAllViewsInLayout();
         int flag = 1;
 
-        // int textSize =  (int) ( context.getResources().getDimension( R.dimen.text_size)/ context.getResources().getDisplayMetrics().density );
-        int textSize =  (int) ( context.getResources().getDimension( R.dimen.text_size) );
+        int textSize =  (int) ( context.getResources().getDimension( R.dimen.text_size)/ context.getResources().getDisplayMetrics().density );
+        // int textSize =  (int) ( context.getResources().getDimension( R.dimen.text_size) );
         int textColor =  ContextCompat.getColor(context, R.color.colorrText);
         int headerTextColor =  ContextCompat.getColor(context, R.color.colorHeaderText);
         SimpleDateFormat dateFormat = new    SimpleDateFormat("yyyy-MM-dd");
