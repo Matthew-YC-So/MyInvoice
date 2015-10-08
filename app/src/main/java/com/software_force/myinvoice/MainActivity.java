@@ -21,10 +21,7 @@ import java.util.List;
 // public class MainActivity extends ListActivity {
 public class MainActivity extends AppCompatActivity {
 
-    // private ListView listView;
-    private  TableLayout table;
-    private InvoicesAdapter customAdapter;
-    // private Cursor cursor;
+    private TableLayout table;
     private List<Invoice> data;
     private InvoicesDataSource dataSource;
 
@@ -68,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-//                customAdapter = new InvoicesAdapter(MainActivity.this, cursor, 0);
- //               listView.setAdapter(customAdapter);
                 InvoicesTableLoader loader = new InvoicesTableLoader( MainActivity.this, table, data);
                 loader.Build();
             }

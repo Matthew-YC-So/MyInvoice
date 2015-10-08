@@ -3,10 +3,15 @@
     <string name="action_settings">Settings</string>
     <string name="action_search">Search</string>
     <string name="action_compose">Compose</string>
+
     <string name="invoice_id">Inv #</string>
     <string name="invoice_date">Date</string>
     <string name="invoice_member">Member</string>
     <string name="invoice_net">Net</string>
+
+    <string name="item_code">Item #</string>
+    <string name="item_description">Description</string>
+    <string name="item_price">Price</string>
 
     <string name="title_activity_invoice_edit">invoice</string>
     <string name="dummy_button">Dummy Button</string>

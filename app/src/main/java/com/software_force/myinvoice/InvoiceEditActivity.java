@@ -3,10 +3,12 @@ package com.software_force.myinvoice;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -48,6 +50,29 @@ public class InvoiceEditActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu_invoice_edit, menu);
         return super.onCreateOptionsMenu(menu);
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        int id = item.getItemId();
+        if (id == R.id.action_search)
+        {
+            Toast.makeText(getApplicationContext(), "SEARCH", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.action_add) {
+            showSelectItems();
+            return true;
+        } else {
+            Toast.makeText(getApplicationContext(), "DEFAULT", Toast.LENGTH_SHORT).show();
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void  showSelectItems() {
+        Intent intent = new Intent(this, ItemsActivity.class);
+        startActivity(intent);
+    }
+
 
     private void  setInvoiceDate(Date date){
         edit_invoiceDate.setText(dateFormatter.format(date));

@@ -20,13 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".invoiceEditActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_invoice_edit"
-            android:theme="@style/FullscreenTheme" >
-        </activity>
         <activity android:name=".InvoiceEditActivity" >
+        </activity>
+        <activity android:name=".ItemsActivity"
+            android:theme="@style/Theme.AppCompat" >
         </activity>
     </application>
 
