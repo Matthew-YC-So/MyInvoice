@@ -1,10 +1,12 @@
 package com.software_force.myinvoice;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -40,6 +42,7 @@ public class ItemsTableLoader {
         int textColor =  ContextCompat.getColor(context, R.color.colorrText);
         int headerTextColor =  ContextCompat.getColor(context, R.color.colorHeaderText);
         SimpleDateFormat dateFormat = new    SimpleDateFormat("yyyy-MM-dd");
+        int cbxDrwid = Resources.getSystem().getIdentifier("btn_check_holo_light", "drawable", "android");
 
         // when i=-1, loop will display heading of each column
         // then usually data will be display from i=0 to data.length()
@@ -54,11 +57,37 @@ public class ItemsTableLoader {
             // this will be executed once
             if (flag == 1) {
 
+                CheckBox cbxAll = new CheckBox(this.context);
+                cbxAll.setText(context.getString(R.string.item_code));
+                cbxAll.setTextSize(textSize);
+                cbxAll.setButtonDrawable(cbxDrwid);
+                cbxAll.setOnClickListener(new View.OnClickListener() {
+                                              @Override
+                                              public void onClick(View v) {
+                                                  for (int i = 1; i < ItemsTableLoader.this.table.getChildCount(); ++i) {
+                                                      View view = ItemsTableLoader.this.table.getChildAt(i);
+                                                      if (view instanceof TableRow) {
+                                                          TableRow row = (TableRow) view;
+                                                          CheckBox cbx = (CheckBox) row.getChildAt(0);
+                                                          cbx.setChecked(((CheckBox) v).isChecked());
+                                                      }
+
+                                                  }
+                                              }
+                                          }
+
+                );
+                TableRow.LayoutParams params = new TableRow.LayoutParams();
+                params.span = 2;
+                tr.addView(cbxAll, params);
+
+                /*
                 TextView b3 = new TextView(this.context);
                 b3.setText(context.getString(R.string.item_code));
                 b3.setTextColor(headerTextColor);
                 b3.setTextSize(textSize);
                 tr.addView(b3);
+                */
 
                 TextView b4 = new TextView(this.context);
                 b4.setPadding(10, 0, 0, 0);
@@ -83,6 +112,10 @@ public class ItemsTableLoader {
                 this.table.addView(vline); // add line below heading
                 flag = 0;
             } else {
+
+                CheckBox cbx = new CheckBox(this.context);
+                cbx.setButtonDrawable(cbxDrwid);
+                tr.addView(cbx);
 
                 Item dataItem = this.data.get(i);
 
