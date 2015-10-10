@@ -37,11 +37,20 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" android:text="@string/invoice_member" android:textSize="@dimen/text_size" />
-
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/member" />
-
+    <TableLayout
+        android:id="@+id/invoice_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView android:text="@string/item_code" android:textSize="@dimen/text_size" android:paddingTop="10dp" android:textColor="@color/colorHeaderText" />
+            <TextView android:text="@string/item_description"  android:textSize="@dimen/text_size" android:paddingTop="10dp"  android:textColor="@color/colorHeaderText"/>
+            <TextView android:text="@string/item_price"  android:textSize="@dimen/text_size" android:paddingTop="10dp"  android:textColor="@color/colorHeaderText"/>
+            <TextView android:text="@string/item_qty"  android:textSize="@dimen/text_size" android:paddingTop="10dp"  android:textColor="@color/colorHeaderText"/>
+        </TableRow>
+    </TableLayout>
 
 </LinearLayout>
