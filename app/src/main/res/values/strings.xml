@@ -5,11 +5,15 @@
     <string name="action_settings">Settings</string>
     <string name="action_search">Search</string>
     <string name="action_compose">Compose</string>
+    <string name="action_save">Save</string>
 
     <string name="invoice_id">Inv #</string>
     <string name="invoice_date">Date</string>
     <string name="invoice_member">Member</string>
-    <string name="invoice_net">Net</string>
+    <string name="invoice_gross">Gross</string>
+    <string name="invoice_discount">Discount %</string>
+    <string name="invoice_net">Net Amount</string>
+    <string name="invoice_gst">GST</string>
 
     <string name="item_code">Item #</string>
     <string name="item_description">Description</string>
@@ -21,4 +25,6 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="select_date">Select date</string>
     <string name="confirm">Confirm</string>
+
+    <string name="message_saved">Saved</string>
 </resources>

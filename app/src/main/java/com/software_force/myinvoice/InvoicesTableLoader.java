@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.software_force.myinvoice.models.Invoice;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -42,6 +43,11 @@ public class InvoicesTableLoader {
         int textColor =  ContextCompat.getColor(context, R.color.colorrText);
         int headerTextColor =  ContextCompat.getColor(context, R.color.colorHeaderText);
         SimpleDateFormat dateFormat = new    SimpleDateFormat("yyyy-MM-dd");
+        DecimalFormat decimalFormat;
+        decimalFormat = new DecimalFormat();
+        decimalFormat.setMaximumFractionDigits(2);
+        decimalFormat.setMinimumFractionDigits(2);
+        decimalFormat.setGroupingUsed(true);
 
         // when i=-1, loop will display heading of each column
         // then usually data will be display from i=0 to data.length()
@@ -121,7 +127,7 @@ public class InvoicesTableLoader {
 
                 TextView b3 = new TextView(this.context);
                 b3.setPadding(10, 0, 0, 0);
-                b3.setText(dataItem.getNet().toString());
+                b3.setText(decimalFormat.format(dataItem.getNet()));
                 b3.setTextColor(textColor);
                 b3.setTextSize(textSize);
                 b3.setGravity(Gravity.RIGHT);

@@ -13,9 +13,11 @@ import android.widget.TableLayout;
 import android.widget.Toast;
 
 import com.software_force.myinvoice.models.Invoice;
+import com.software_force.myinvoice.models.Item;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 // public class MainActivity extends ListActivity {
@@ -61,16 +63,18 @@ public class MainActivity extends AppCompatActivity {
             Log.e( "main_activity",  e.getMessage());
         }
 
-        new Handler().post(new Runnable() {
+        loadInvoiceList();
+    }
 
+    private void loadInvoiceList() {
+        new Handler().post(new Runnable() {
             @Override
             public void run() {
-                InvoicesTableLoader loader = new InvoicesTableLoader( MainActivity.this, table, data);
+                MainActivity.this.data = MainActivity.this.dataSource.getAllInvoices();
+                InvoicesTableLoader loader = new InvoicesTableLoader(MainActivity.this, MainActivity.this.table, MainActivity.this.data);
                 loader.Build();
             }
-
         });
-
     }
 
     @Override
@@ -98,9 +102,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    final static int ADD_INVOICE = 1;
+
     private void  showAddInvoice() {
         Intent intent = new Intent(this, InvoiceEditActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, ADD_INVOICE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == ADD_INVOICE && resultCode == RESULT_OK) {
+            loadInvoiceList(); // Refresh invoices
+        }
     }
 
     @Override

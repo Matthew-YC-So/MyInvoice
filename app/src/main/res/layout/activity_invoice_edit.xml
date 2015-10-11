@@ -7,40 +7,115 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.software_force.myinvoice.InvoiceEditActivity">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:text="@string/invoice_date" android:textSize="@dimen/text_size" />
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/invoice_date_label"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/invoice_date"
+            android:textSize="@dimen/text_size"
+            android:ems="5" />
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
+            android:layout_toRightOf="@id/invoice_date_label"
+            android:layout_alignBaseline="@id/invoice_date_label"
             android:inputType="date"
-            android:ems="10"
+            android:ems="8"
             android:id="@+id/invoiceDate" />
-
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/invoiceDate"
-            android:layout_alignBottom="@id/invoiceDate"
+            android:layout_alignTop="@id/invoiceDate"
             android:id="@+id/selectInvoiceDate"
             android:src="@drawable/ic_action_schedule"
             android:contentDescription="@string/select_date"
-            android:cropToPadding="true"/>
+            android:cropToPadding="true"
+            />
     </RelativeLayout>
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:text="@string/invoice_member" android:textSize="@dimen/text_size" />
-    <EditText
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/member_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/invoice_member"
+            android:ems="5"
+            android:textSize="@dimen/text_size" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:layout_toRightOf="@id/member_label"
+            android:layout_alignBaseline="@id/member_label"
+            android:id="@+id/member" />
+    </RelativeLayout>
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/member" />
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/gross_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/invoice_gross"
+            android:ems="5"
+            android:textSize="@dimen/text_size" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:layout_toRightOf="@id/gross_label"
+            android:layout_alignBaseline="@id/gross_label"
+            android:text="0"
+            android:textSize="@dimen/text_size"
+            android:id="@+id/gross" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/discount_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/invoice_discount"
+            android:ems="5"
+            android:textSize="@dimen/text_size" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:layout_toRightOf="@id/discount_label"
+            android:layout_alignBaseline="@id/discount_label"
+            android:text="0"
+            android:inputType="numberDecimal"
+            android:id="@+id/discount" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/net_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/invoice_net"
+            android:ems="5"
+            android:textSize="@dimen/text_size" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:layout_toRightOf="@id/net_label"
+            android:layout_alignBaseline="@id/net_label"
+            android:text="0"
+            android:textSize="@dimen/text_size"
+            android:id="@+id/net" />
+    </RelativeLayout>
     <TableLayout
         android:id="@+id/invoice_details"
         android:layout_width="match_parent"

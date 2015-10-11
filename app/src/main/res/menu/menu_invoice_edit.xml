@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".InvoiceEditActivity">
-    <item android:id="@+id/action_search" android:title="@string/action_search" android:icon="@drawable/ic_action_search"
-        app:showAsAction="always"
-        android:orderInCategory="100"   />
     <item android:id="@+id/action_add" android:title="@string/action_compose" android:icon="@drawable/ic_action_add"
         android:orderInCategory="100" app:showAsAction="always" />
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_save" android:title="@string/action_save" android:icon="@drawable/ic_action_save"
+        app:showAsAction="always"
+        android:orderInCategory="100"   />
+    <!-- item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" app:showAsAction="never" / -->
 </menu>
